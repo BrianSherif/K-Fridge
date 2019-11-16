@@ -58,13 +58,14 @@ def auth():
         return redirect(url_for('login'))
 
 
-@app.route('/recipes', defaults={'ingredients': None})
-def recipes(ingredients):
-    if ingredients:
+@app.route('/recipes')
+def recipes(ingredients=None):
+    if ingredients != None:
         ingredients = ingredients.split(',')
-        recipes = getRecipes()
+        # recipes = getRecipes()
     else:
-        recipes = getRandRecipes()
+        ingredients = []
+        # recipes = getRandRecipes()
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
 if __name__ == "__main__":
