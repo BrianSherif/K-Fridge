@@ -1,3 +1,4 @@
 flask==1.1.0
 Flask-SQLAlchemy==2.4.1
 passlib==1.7.1
+jsonschema==2.6.0

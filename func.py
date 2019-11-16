@@ -1,11 +1,16 @@
 import requests
-# from db.__init__ import *
+import json
 
-# Django
-
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+def parseJson(data):
+    """ Parsing a JSON string to dictionary
+    Returns a dictionary
+    """
+    return (json.loads(data))
 
 def findRecipe(ingridList):
+    """ An API call to find recipes with a given set of ingridients
+    Returns a dictionary
+    """
     ingridients = ",".join(ingridList)
 
     url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients"
@@ -22,9 +27,12 @@ def findRecipe(ingridList):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    print(response.text)
+    return parseJson(response.text)
 
 def getRecipeDesc(id):
+    """ An API call to get the chosen recipe's description
+    Returns a dictionary
+    """
     url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + str(id) + "/information"
 
     headers = {
@@ -34,4 +42,4 @@ def getRecipeDesc(id):
 
     response = requests.request("GET", url, headers=headers)
 
-    print(response.text)
+    return parseJson(response.text)
