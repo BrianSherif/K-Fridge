@@ -4,6 +4,9 @@
 
 * [Python3](https://www.python.org/)
 * pip3
+* django
+* sqlalchemy
+* passlib
 
 ## Set up build environment
 
