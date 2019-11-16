@@ -86,30 +86,13 @@
 					<div class="elementor-shortcode">
 <table id="tablepress-1" class="tablepress tablepress-id-1 tablepress-id-test">
 <tbody class="row-hover">
+	{ % if user == True % }
+	{% for ingredient in user.items %}
 <tr class="row-1 odd">
-	<td class="column-1">Banana</td><td class="column-2"><a href="../delete.html">delete</a></td>
+	<td class="column-1">{% ingredient %}</td><td class="column-2"><a href="../delete.html">delete</a></td>
 </tr>
-<tr class="row-2 even">
-	<td class="column-1">Flour</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-3 odd">
-	<td class="column-1">Baking Powder</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-4 even">
-	<td class="column-1">Sugar</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-5 odd">
-	<td class="column-1">Vanilla</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-6 even">
-	<td class="column-1">Milk</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-7 odd">
-	<td class="column-1">Eggs</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
-<tr class="row-8 even">
-	<td class="column-1">Yogurt</td><td class="column-2"><a href="../delete.html">delete</a></td>
-</tr>
+{% endfor %}
+{% endif %}
 </tbody>
 </table>
 <!-- #tablepress-1 from cache --></div>
