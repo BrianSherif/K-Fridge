@@ -7,7 +7,7 @@ def parseJson(data):
     """
     return (json.loads(data))
 
-def findRecipe(ingridList):
+def getRecipes(ingridList):
     """ An API call to find recipes with a given set of ingridients
     Returns a dictionary
     """
@@ -18,7 +18,21 @@ def findRecipe(ingridList):
     # number = max nr of recipes response
     # ranking = (1) prioritize using more already owned products, (2) prioritize less missing ingridients
     # ignorePantry = whether to ignore pantry ingredients such as water, salt, flour etc.
-    querystring = {"number":"5","ranking":"1","ignorePantry":"true","ingredients": ingridients}
+    querystring = {"number":"3","ranking":"1","ignorePantry":"true","ingredients": ingridients}
+
+    headers = {
+        'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+        'x-rapidapi-key': "cd8ff82fb4mshe8e538f653b408ap180430jsn5032ccaa46c4"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    return parseJson(response.text)
+
+def getRandRecipes():
+    url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random"
+
+    querystring = {"number":"3","tags":"vegetarian,dessert"}
 
     headers = {
         'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",

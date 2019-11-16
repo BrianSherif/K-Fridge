@@ -1,14 +1,12 @@
 from flask import Flask, request, render_template, url_for, redirect, send_from_directory, session
-from flask_login import LoginManager
 import sqlite3
-import random
 import string
 import os
 from db.__init__ import *
+from func import getRecipes, getRandRecipes, getRecipeDesc
 
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'static')
 
-is_logged_in = False
 app = Flask(__name__, template_folder=static_file_dir, static_folder=static_file_dir)
 app.config['SECRET_KEY'] = 'AbReheSO2uksoMbZpagPHpuCdKY3R3DqiFIfLDy5K6I0XFOEOgMOfgwGB5pHeatI'
 
@@ -21,9 +19,6 @@ def connect_db():
 
     cursor = conn.cursor()
     return cursor, conn
-
-def generate_random(n=64):
-    return ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(n))
 
 @app.route('/home')
 @app.route('/')
@@ -65,8 +60,12 @@ def auth():
 
 @app.route('/recipes', defaults={'ingredients': None})
 def recipes(ingredients):
-    ingredients = ingredients.split(',')
-    return render_template('/recipes/index.html', ingredients=ingredients)
+    if ingredients:
+        ingredients = ingredients.split(',')
+        recipes = getRecipes()
+    else:
+        recipes = getRandRecipes()
+    return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
 if __name__ == "__main__":
     app.run(debug=True, port='5000')
