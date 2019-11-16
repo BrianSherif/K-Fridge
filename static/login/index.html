@@ -73,13 +73,13 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-92911d6 elementor-widget elementor-widget-login" data-id="92911d6" data-element_type="widget" data-widget_type="login.default">
 				<div class="elementor-widget-container">
-					<form class="elementor-login elementor-form" method="post" action="./wp-login.php">
+					<form class="elementor-login elementor-form" method="POST" action="/auth">
 			<input type="hidden" name="redirect_to" value="/login/">
 			<div class="elementor-form-fields-wrapper">
 				<div class="elementor-field-type-text elementor-field-group elementor-column elementor-col-100 elementor-field-required">
-					<label for="user"> Username or Email Address</label><input size="1" type="text" name="log" id="user" placeholder=" Username or Email Address" class="elementor-field elementor-field-textual elementor-size-sm">				</div>
+					<label for="user"> Username or Email Address</label><input size="1" type="text" name="username" id="user" placeholder=" Username or Email Address" class="elementor-field elementor-field-textual elementor-size-sm">				</div>
 				<div class="elementor-field-type-text elementor-field-group elementor-column elementor-col-100 elementor-field-required">
-					<label>Password</label><input size="1" type="password" name="pwd" id="password" placeholder="Password" class="elementor-field elementor-field-textual elementor-size-sm">				</div>
+					<label>Password</label><input size="1" type="password" name="password" id="password" placeholder="Password" class="elementor-field elementor-field-textual elementor-size-sm">				</div>
 
 									<div class="elementor-field-type-checkbox elementor-field-group elementor-column elementor-col-100 elementor-remember-me">
 						<label for="elementor-login-remember-me">
@@ -88,7 +88,7 @@
 					</div>
 								
 				<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-					<button type="submit" class="elementor-size-sm elementor-button" name="wp-submit" method="POST" action='/auth'>
+					<button type="submit" class="elementor-size-sm elementor-button" name="" method="POST" action='/auth'>
 															<span class="elementor-button-text">Log In</span>
 												</button>
 				</div>

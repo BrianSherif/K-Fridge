@@ -86,13 +86,11 @@
 					<div class="elementor-shortcode">
 <table id="tablepress-1" class="tablepress tablepress-id-1 tablepress-id-test">
 <tbody class="row-hover">
-	{ % if user == True % }
-	{% for ingredient in user.items %}
+{% for item in ingredients %}
 <tr class="row-1 odd">
-	<td class="column-1">{% ingredient %}</td><td class="column-2"><a href="../delete.html">delete</a></td>
+	<td class="column-1">{{ item }}</td><td class="column-2"><a href="../delete.html">delete</a></td>
 </tr>
 {% endfor %}
-{% endif %}
 </tbody>
 </table>
 <!-- #tablepress-1 from cache --></div>
