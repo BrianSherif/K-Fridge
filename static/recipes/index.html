@@ -113,52 +113,48 @@ $('#output').html(function(i, val) { return val*1+50 });
 					<div class="elementor-posts-container elementor-posts elementor-grid elementor-posts--skin-cards">
 				<article class="elementor-post elementor-grid-item post-45 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-3/index.html">
-			<div class="elementor-post__thumbnail"><img width="300" height="88" src="/static/wp-content/uploads/2019/11/Juuressosekeitto_kuvitus-300x88.png" class="attachment-medium size-medium" alt="" /></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[0]['id'] }}/{{ recipes[0]['title'] }}">
+			<div class="elementor-post__thumbnail"><img width="300" height="88" src='{{ recipes[0]["image"] }}' class="attachment-medium size-medium" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-3/index.html">
-				Recipe 3			</a>
+			<a href="/recipedesc/{{ recipes[0]['id'] }}/{{ recipes[0]['title'] }}">{{ recipes[0]["title"] }}</a>
 		</h3>
 				<div class="elementor-post__excerpt">
 					</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-3/index.html">
+					<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[0]['id'] }}/{{ recipes[0]['title'] }}">
 				Read More »			</a>
 				</div>
 					</div>
 		</article>
 				<article class="elementor-post elementor-grid-item post-43 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-2/index.html">
-			<div class="elementor-post__thumbnail"><img width="300" height="88" src="/static/wp-content/uploads/2019/11/Paistettu_riisi_kuvitus-300x88.png" class="attachment-medium size-medium" alt="" /></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[1]['id'] }}/{{ recipes[1]['title'] }}">
+			<div class="elementor-post__thumbnail"><img width="300" height="88" src='{{ recipes[1]["image"] }}' class="attachment-medium size-medium" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-2/index.html">
-				Recipe 2			</a>
+			<a href="/recipedesc/{{ recipes[1]['id'] }}/{{ recipes[1]['title'] }}">{{ recipes[1]["title"] }}</a>
 		</h3>
 				<div class="elementor-post__excerpt">
 					</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-2/index.html">
+					<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[1]['id'] }}/{{ recipes[1]['title'] }}">
 				Read More »			</a>
 				</div>
 					</div>
 		</article>
 				<article class="elementor-post elementor-grid-item post-41 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-1/index.html">
-			<div class="elementor-post__thumbnail"><img width="300" height="115" src="/static/wp-content/uploads/2019/11/image-300x115.png" class="attachment-medium size-medium" alt="" /></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[2]['id'] }}/{{ recipes[2]['title'] }}">
+			<div class="elementor-post__thumbnail"><img width="300" height="115" src='{{ recipes[2]["image"] }}' class="attachment-medium size-medium" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-1/index.html">
-				Recipe 1			</a>
+			<a href="/recipedesc/{{ recipes[2]['id'] }}/{{ recipes[2]['title'] }}">{{ recipes[2]["title"] }}</a>
 		</h3>
 				<div class="elementor-post__excerpt">
-			<p>Ingredients: -Potato-Strawberry-Sugar cane Instructions: Please start a camp fire and toss all the materials necessary to make a dish.</p>
 		</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-1/index.html">
+					<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[2]['id'] }}/{{ recipes[2]['title'] }}">
 				Read More »			</a>
 				</div>
 					</div>

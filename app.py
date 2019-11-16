@@ -58,15 +58,20 @@ def auth():
         return redirect(url_for('login'))
 
 
-@app.route('/recipes')
-def recipes(ingredients=None):
-    if ingredients != None:
+@app.route('/recipes', defaults={'ingredients': None})
+def recipes(ingredients):
+    if ingredients:
         ingredients = ingredients.split(',')
-        # recipes = getRecipes()
+        recipes = getRecipes(ingredients)
     else:
         ingredients = []
-        # recipes = getRandRecipes()
+        recipes = getRandRecipes()
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
+
+@app.route('/recipedesc/<id>/<name>')
+def recipeDesc(id, name):
+    recipe = getRecipeDesc(id)
+    return render_template('/2019/11/16/recipe-1/index.html', recipe=recipe, name=name)
 
 if __name__ == "__main__":
     app.run(debug=True, port='5000')
