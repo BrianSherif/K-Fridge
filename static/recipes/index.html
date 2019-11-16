@@ -35,6 +35,7 @@
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/static/xmlrpc0db0.php?rsd"/>
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/static/wp-includes/wlwmanifest.xml"/> 
 <meta name="generator" content="WordPress 5.3"/>
+
 <meta name="generator" content="WooCommerce 3.8.0"/>
 <link rel="canonical" href="index.html"/>
 <link rel='shortlink' href='/static/indexb93f.html?p=38'/>
@@ -67,7 +68,9 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-5f473c3 elementor-widget elementor-widget-heading" data-id="5f473c3" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">Recipes you can cook now! </h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">Recipes you can cook now! </h2>	
+			<div id="output">300</div>
+		</div>
 				</div>
 						</div>
 			</div>
@@ -75,6 +78,7 @@
 						</div>
 			</div>
 		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 				<section class="elementor-element elementor-element-20a4b85 elementor-section-boxed ang-section-padding-no elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="20a4b85" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
@@ -86,11 +90,19 @@
 					<div class="elementor-shortcode">
 <table id="tablepress-1" class="tablepress tablepress-id-1 tablepress-id-test">
 <tbody class="row-hover">
+{% if ingredients != None %}
 {% for item in ingredients %}
 <tr class="row-1 odd">
 	<td class="column-1">{{ item }}</td><td class="column-2"><a href="../delete.html">delete</a></td>
+	<script>
+			$('#target').click(function() {
+$('#output').html(function(i, val) { return val*1+50 });
+});
+		  </script>
+	<td class="column-3"><button id="target" type="button">Add to CF</button></td>
 </tr>
 {% endfor %}
+{% endif %}
 </tbody>
 </table>
 <!-- #tablepress-1 from cache --></div>
