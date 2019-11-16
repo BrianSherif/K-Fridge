@@ -2,11 +2,12 @@
 
 ## Required Packages
 
-* [Python3](https://www.python.org/)
+* [python3](https://www.python.org/)
 * pip3
 * django
 * sqlalchemy
 * passlib
+* jsonschema
 
 ## Set up build environment
 
