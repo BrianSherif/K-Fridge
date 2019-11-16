@@ -15,5 +15,13 @@ def home():
 def about():
     return render_template('/about-us/index.html')
 
+@app.route('/login')
+def login():
+    return render_template('/login/index.html')
+
+@app.route('/recipes')
+def recipes():
+    return render_template('/recipes/index.html')
+
 if __name__ == "__main__":
     app.run(debug=True, port='5000')
