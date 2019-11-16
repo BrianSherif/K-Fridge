@@ -4,7 +4,7 @@
 
 * [python3](https://www.python.org/)
 * pip3
-* django
+* flask
 * sqlalchemy
 * passlib
 * jsonschema
