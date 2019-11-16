@@ -16,7 +16,7 @@ def check_encrypted_password(password, hashed):
 
 db.create_all()
 
-admin = user(username = "admin", email = "admin@jacobs-university.de", password = encrypt_password("admin"), items = ["apples", "flour", "sugar"])
+admin = user(username = "admin", email = "admin@jacobs-university.de", password = encrypt_password("admin"), items = "apples,flour,sugar")
 
 db.session.add(admin)
 

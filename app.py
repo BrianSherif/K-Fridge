@@ -69,7 +69,7 @@ def login_auth(token):
     print(result)
     if result:
         query = s.query(user).filter(user.username.in_([post_username])).first()
-        ingredients = query.items
+        ingredients = query.items.split(',')
         session['logged_in'] = True
         session['userid'] = query.userid
         return redirect(url_for('recipes', user=query))
