@@ -64,12 +64,11 @@ def recipes(ingredients=None):
     if ingredients != None:
         ingredients = ingredients.split(',')
         recipes = getRecipes(ingredients)
-        print("with ingridients", recipes)
     else:
         ingredients = []
         recipes = getRandRecipes()
         session['logged_in'] = False
-        print("without ingridients", recipes)
+        
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
 @app.route('/recipedesc/<id>')
@@ -78,4 +77,4 @@ def recipeDesc(id):
     return render_template('/2019/11/16/recipe-1/index.html', recipe=recipe)
 
 if __name__ == "__main__":
-    app.run(debug=True, port='5000')
+    app.run(port='5000')
