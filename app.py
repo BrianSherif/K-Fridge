@@ -66,6 +66,7 @@ def recipes(ingredients):
     else:
         ingredients = []
         recipes = getRandRecipes()
+        session['logged_in'] = False
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
 @app.route('/recipedesc/<id>')
