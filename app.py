@@ -89,5 +89,9 @@ def recipeDesc(id):
     recipe = getRecipeDesc(id)
     return render_template('/2019/11/16/recipe-1/index.html', recipe = recipe)
 
+@app.route('/shop')
+def shop():
+    return render_template('/shop/index.html')
+
 if __name__ == "__main__":
     app.run(port='5000')
