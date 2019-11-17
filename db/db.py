@@ -1,13 +1,14 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from passlib.context import CryptContext
 
-# class user():
-#     userid = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(80), unique=True, nullable=False)
-#     email = db.Column(db.String(120), unique=True, nullable=False)
-#     password = db.Column(db.String(120), unique=False, nullable=False)
-#     items = db.Column(db.String(256), unique=False, nullable=False)
+pwd_context = CryptContext(
+        schemes=["pbkdf2_sha256"],
+        default="pbkdf2_sha256",
+        pbkdf2_sha256__default_rounds=30000
+)
 
-#     def __repr__(self):
-#         return '<user %r>' % self.username
+def encrypt_password(password):
+    return pwd_context.encrypt(password)
 
+
+def check_encrypted_password(password, hashed):
+    return pwd_context.verify(password, hashed)
