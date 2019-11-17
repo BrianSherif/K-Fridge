@@ -2,3 +2,4 @@ flask==1.1.0
 passlib==1.7.1
 jsonschema==2.6.0
 flask-login==0.4.1
+requests==2.21.0

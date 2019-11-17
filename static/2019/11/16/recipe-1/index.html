@@ -7,11 +7,11 @@
 	<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<title>{{ name }}</title>
+	<title>{{ recipe["title"] }}</title>
 <link rel='dns-prefetch' href='http://s.w.org/'/>
 <link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="/static/feed/index.html"/>
 <link rel="alternate" type="application/rss+xml" title=" &raquo; Comments Feed" href="/static/comments/feed/index.html"/>
-<link rel="alternate" type="application/rss+xml" title=" &raquo; {{ name }} Comments Feed" href="feed/index.html"/>
+<link rel="alternate" type="application/rss+xml" title=" &raquo; {{ recipe['title'] }} Comments Feed" href="feed/index.html"/>
 		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/192.168.64.2\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3"}};!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);</script>
 		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
 	<link rel='stylesheet' id='wp-block-library-css' href='/static/wp-includes/css/dist/block-library/style.minde54.css?ver=5.3' type='text/css' media='all'/>
@@ -30,6 +30,89 @@
 <link rel='stylesheet' id='elementor-post-134-css' href='/static/wp-content/uploads/elementor/css/post-134e986.css?ver=1573881284' type='text/css' media='all'/>
 <link rel='stylesheet' id='tablepress-default-css' href='/static/wp-content/tablepress-combined.min9055.css?ver=6' type='text/css' media='all'/>
 <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.3' type='text/css' media='all'/>
+
+<style type="text/css">
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 200px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.prev {
+	margin-left: -105px;
+}
+
+/* Caption text */
+.text {
+  color: #ff6900;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  margin-top: -10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+
 <script type='text/javascript' src='/static/wp-includes/js/jquery/jquery4a5f.js?ver=1.12.4-wp'></script>
 <script type='text/javascript' src='/static/wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 <link rel='https://api.w.org/' href='/static/wp-json/index.html'/>
@@ -68,7 +151,7 @@
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-e63b786 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="e63b786" data-element_type="widget" data-widget_type="theme-post-title.default">
 				<div class="elementor-widget-container">
-			<h1 class="elementor-heading-title elementor-size-default">{{ name }}</h1>		</div>
+			<h1 class="elementor-heading-title elementor-size-default">{{ recipe["title"] }}</h1>		</div>
 				</div>
 						</div>
 			</div>
@@ -85,7 +168,7 @@
 				<div class="elementor-element elementor-element-d11b8f1 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="d11b8f1" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-image">
-										<img width="800" height="305" src="/static/wp-content/uploads/2019/11/image-1024x391.png" class="attachment-large size-large" alt="" srcset="./wp-content/uploads/2019/11/image-1024x391.png 1024w, ./wp-content/uploads/2019/11/image-300x115.png 300w, ./wp-content/uploads/2019/11/image-768x293.png 768w, ./wp-content/uploads/2019/11/image.png 1440w" sizes="(max-width: 800px) 100vw, 800px"/>											</div>
+										<img width="800" height="305" src="{{ recipe['image'] }}" class="attachment-large size-large" alt=""/>											</div>
 				</div>
 				</div>
 						</div>
@@ -103,18 +186,57 @@
 				<div class="elementor-element elementor-element-40662d2 elementor-widget elementor-widget-theme-post-content" data-id="40662d2" data-element_type="widget" data-widget_type="theme-post-content.default">
 				<div class="elementor-widget-container">
 			
-<p>Ingredients:</p>
+<p style="color: #ff6900; font-weight: bold;">Ingredients:</p>
 
+<p>
+	<div class="slideshow-container">
+	{% for ingredient in recipe["extendedIngredients"] %}
+		<div class="flex-container fade">
+			<img src="https://spoonacular.com/cdn/ingredients_100x100/{{ ingredient['image'] }}" style="width:100%">
+			<div class="text">{{ ingredient["name"] }} : {{ ingredient["amount"] }} {{ ingredient["unit"] }}</div>
+		</div>
 
+	{% endfor %}
+		<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+	</div>
+	<br>
+</p>
 
-<p>-Potato<br>-Strawberry<br>-Sugar cane</p>
+<!-- <script>
+var slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-<p>Instructions:</p>
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script> -->
 
+<p style="color: #ff6900; font-weight: bold;">Instructions:</p>
 
-<p>Please start a camp fire and toss all the materials necessary to make a dish. </p>
+<p style="padding-right:30px; padding-left:30px;"> {{ recipe["instructions"] }} </p>
 		</div>
 				</div>
 						</div>
@@ -155,7 +277,7 @@ var ElementorProFrontendConfig={"ajaxurl":"http:\/\/192.168.64.2\/wp-admin\/admi
 <script type='text/javascript' src='/static/wp-content/plugins/elementor/assets/lib/dialog/dialog.minfe9d.js?ver=4.7.3'></script>
 <script type='text/javascript' src='/static/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'></script>
 <script type='text/javascript' src='/static/wp-content/plugins/elementor/assets/lib/swiper/swiper.min4f24.js?ver=4.4.6'></script>
-<script type='text/javascript'>var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.7.5","urls":{"assets":"http:\/\/192.168.64.2\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":41,"title":"{{ name }}","excerpt":""}};</script>
+<script type='text/javascript'>var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.7.5","urls":{"assets":"http:\/\/192.168.64.2\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":41,"title":"{{ recipe['title'] }}","excerpt":""}};</script>
 <script type='text/javascript' src='/static/wp-content/plugins/elementor/assets/js/frontend.min206d.js?ver=2.7.5'></script>
 
 </body>

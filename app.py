@@ -68,10 +68,10 @@ def recipes(ingredients):
         recipes = getRandRecipes()
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
-@app.route('/recipedesc/<id>/<name>')
-def recipeDesc(id, name):
+@app.route('/recipedesc/<id>')
+def recipeDesc(id):
     recipe = getRecipeDesc(id)
-    return render_template('/2019/11/16/recipe-1/index.html', recipe=recipe, name=name)
+    return render_template('/2019/11/16/recipe-1/index.html', recipe=recipe)
 
 if __name__ == "__main__":
     app.run(debug=True, port='5000')
