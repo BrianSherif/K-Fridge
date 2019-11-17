@@ -23,7 +23,8 @@ def connect_db():
 @app.route('/home')
 @app.route('/')
 def home():
-    return render_template('index.html')
+    recipes = getRandRecipes()
+    return render_template('index.html', recipes = recipes)
 
 @app.route('/about')
 def about():
@@ -58,15 +59,17 @@ def auth():
         return redirect(url_for('login'))
 
 
-@app.route('/recipes', defaults={'ingredients': None})
-def recipes(ingredients):
-    if ingredients:
+@app.route('/recipes')
+def recipes(ingredients=None):
+    if ingredients != None:
         ingredients = ingredients.split(',')
         recipes = getRecipes(ingredients)
+        print("with ingridients", recipes)
     else:
         ingredients = []
         recipes = getRandRecipes()
         session['logged_in'] = False
+        print("without ingridients", recipes)
     return render_template('/recipes/index.html', ingredients=ingredients, recipes=recipes)
 
 @app.route('/recipedesc/<id>')

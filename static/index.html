@@ -131,6 +131,7 @@
 						</div>
 			</div>
 		</section>
+		{% if recipes != None %}
 				<section class="elementor-element elementor-element-71ed1a09 ang-section-padding-default elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="71ed1a09" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
@@ -142,56 +143,51 @@
 					<div class="elementor-posts-container elementor-posts elementor-grid elementor-posts--skin-cards">
 				<article class="elementor-post elementor-grid-item post-45 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-3/index.html">
-			<div class="elementor-post__thumbnail"><img width="680" height="200" src="/static/wp-content/uploads/2019/11/Juuressosekeitto_kuvitus.png" class="attachment-large size-large" alt="" srcset="/static/wp-content/uploads/2019/11/Juuressosekeitto_kuvitus.png 680w, /static/wp-content/uploads/2019/11/Juuressosekeitto_kuvitus-300x88.png 300w" sizes="(max-width: 680px) 100vw, 680px"/></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[0]['id'] }}">
+			<div class="elementor-post__thumbnail"><img width="680" height="200" src="{{ recipes[0]['image'] }}" class="attachment-large size-large" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-3/index.html">
-				Recipe 3			</a>
+			<a href="/recipedesc/{{ recipes[0]['id'] }}">{{ recipes[0]["title"] }}</a>
 		</h3>
 				<div class="elementor-post__excerpt">
 					</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-3/index.html">
+					<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[0]['id'] }}">
 				Read More »			</a>
 				</div>
 					</div>
 		</article>
 				<article class="elementor-post elementor-grid-item post-43 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-2/index.html">
-			<div class="elementor-post__thumbnail"><img width="680" height="200" src="/static/wp-content/uploads/2019/11/Paistettu_riisi_kuvitus.png" class="attachment-large size-large" alt="" srcset="/static/wp-content/uploads/2019/11/Paistettu_riisi_kuvitus.png 680w, /static/wp-content/uploads/2019/11/Paistettu_riisi_kuvitus-300x88.png 300w" sizes="(max-width: 680px) 100vw, 680px"/></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[1]['id'] }}">
+			<div class="elementor-post__thumbnail"><img width="680" height="200" src="{{ recipes[1]['image'] }}" class="attachment-large size-large" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-2/index.html">
-				Recipe 2			</a>
+			<a href="/recipedesc/{{ recipes[1]['id'] }}">{{ recipes[1]["title"] }}</a>
 		</h3>
 				<div class="elementor-post__excerpt">
 					</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-2/index.html">
+					<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[1]['id'] }}">
 				Read More »			</a>
 				</div>
 					</div>
 		</article>
 				<article class="elementor-post elementor-grid-item post-41 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
 			<div class="elementor-post__card">
-				<a class="elementor-post__thumbnail__link" href="/static/2019/11/16/recipe-1/index.html">
-			<div class="elementor-post__thumbnail"><img width="800" height="305" src="/static/wp-content/uploads/2019/11/image-1024x391.png" class="attachment-large size-large" alt="" /></div>
+				<a class="elementor-post__thumbnail__link" href="/recipedesc/{{ recipes[2]['id'] }}">
+			<div class="elementor-post__thumbnail"><img width="800" height="305" src="{{ recipes[2]['image'] }}" class="attachment-large size-large" alt="" /></div>
 		</a>
 				<div class="elementor-post__text">
 				<h3 class="elementor-post__title">
-			<a href="/static/2019/11/16/recipe-1/index.html">
-				Recipe 1			</a>
+			<a href="/recipedesc/{{ recipes[2]['id'] }}">{{ recipes[2]["title"] }}</a>
 		</h3>
-				<div class="elementor-post__excerpt">
-			<p>Ingredients: -Potato-Strawberry-Sugar cane Instructions: Please start a camp fire and toss all the materials necessary to make a dish.</p>
-		</div>
-					<a class="elementor-post__read-more" href="/static/2019/11/16/recipe-1/index.html">
+				<a class="elementor-post__read-more" href="/recipedesc/{{ recipes[2]['id'] }}">
 				Read More »			</a>
 				</div>
 					</div>
 		</article>
+		{% endif %}
 				</div>
 				</div>
 				</div>

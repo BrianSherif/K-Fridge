@@ -22,7 +22,7 @@ def getRecipes(ingridList):
 
     headers = {
         'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        'x-rapidapi-key': "cd8ff82fb4mshe8e538f653b408ap180430jsn5032ccaa46c4"
+        'x-rapidapi-key': "7d34f06ddbmshb7ffd6947fe2f04p1ba4a8jsn9ed18d4c415a"
         }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -30,13 +30,13 @@ def getRecipes(ingridList):
     return parseJson(response.text)
 
 def getRandRecipes():
-    url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random"
+    url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByNutrients"
 
-    querystring = {"number":"3","tags":"vegetarian,dessert"}
+    querystring = {"number":"3","maxCalories":"250"}
 
     headers = {
         'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        'x-rapidapi-key': "cd8ff82fb4mshe8e538f653b408ap180430jsn5032ccaa46c4"
+        'x-rapidapi-key': "7d34f06ddbmshb7ffd6947fe2f04p1ba4a8jsn9ed18d4c415a"
         }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -51,7 +51,7 @@ def getRecipeDesc(id):
 
     headers = {
         'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        'x-rapidapi-key': "cd8ff82fb4mshe8e538f653b408ap180430jsn5032ccaa46c4"
+        'x-rapidapi-key': "7d34f06ddbmshb7ffd6947fe2f04p1ba4a8jsn9ed18d4c415a"
         }
 
     response = requests.request("GET", url, headers=headers)
